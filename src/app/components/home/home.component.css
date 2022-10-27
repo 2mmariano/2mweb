@@ -1,0 +1,91 @@
+.logo{
+    margin-top: 2%;
+    padding: 50%;
+    width: 20%;
+}
+
+.redes{
+    padding-left: 50%;
+}
+
+.redes-logos{
+    width: 9%;
+    margin: 0 8% 0 8%;
+}
+
+.background-landing{
+    background-color: #1B345C;
+}
+
+.background-paquetes{
+    background-color: #991D18;
+}
+
+.background-contratar{
+    background-color: D0DAEA;
+    display: flex;
+    justify-content: center;
+}
+
+.contratar-elements{
+    padding: 50px 0px 50px 0px;
+}
+
+.contratar-button{
+    background-color: #2B5394;
+    color: #FFFFFF;
+    font-size: 18px;
+}
+
+.div-button{
+    padding-left: 32.5%;
+}
+
+.contratar-elements h1{
+    font-size: 32px;
+    padding-left: 30%;
+    color: #213F70;
+}
+
+.contratar-elements h3{
+    padding-left: 10%;
+}
+
+.input{
+    width: 100%;
+}
+
+.contratar-elements mat-icon{
+    padding-left: 45%;
+}
+
+.background-reportar{
+    background-color: #A31F1A;
+    display: flex;
+    justify-content: center;
+}
+
+.reportar-elements{
+    padding: 10px 0px 10px 0px;
+}
+
+.background-footer{
+    background-color: #1E3966;
+}
+
+.font-footer{
+    color: #FFFFFF;
+}
+
+.font-footer p{
+    font-size: 22px;
+}
+
+.title{
+    color: #FFFFFF;
+    font-size: 32px;
+}
+
+.reportar-button{
+    padding-left: 35%;
+}

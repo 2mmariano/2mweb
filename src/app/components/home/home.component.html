@@ -1,0 +1,104 @@
+<header class="background-landing">
+  <h1>Siente la velocidad</h1>
+  <h2>El internet más rápido, punto.</h2>
+  <button mat-raised-button>Contrata ya</button>
+</header>
+<div class="background-paquetes">
+  <h1>Paquetes</h1>
+  <mat-card>Basico</mat-card>
+  <mat-card>Plus</mat-card>
+  <mat-card>Pro</mat-card>
+  <mat-card>Empresarial</mat-card>
+  <mat-card>Gamer</mat-card>
+</div>
+<div>
+  <div class="background-contratar">
+    <div class="contratar-elements">
+      <mat-icon mat-list-icon>location_on</mat-icon>
+      <h1>Contratar</h1>
+      <h2>¿Donde quieres que instalemos tu internet?</h2>
+      <h3>Ingresa los datos para validar cobertura.</h3>
+      <mat-form-field class="input" appearance="outline">
+        <mat-label>Código Postal</mat-label>
+        <input matInput placeholder="Ej. 47980" >
+      </mat-form-field>
+      <div class="div-button">
+        <button class="contratar-button" mat-raised-button>Contrata ya</button>
+      </div>
+    </div>
+  </div>
+  <div class="background-reportar">
+    <div class="reportar-elements">
+      <h2 class="title">¿Tienes problemas con el servicio?</h2>
+      <div class="reportar-button">
+        <button mat-raised-button>Reportar servicio</button>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<footer class="background-footer">
+  <mat-grid-list cols="4" rowHeight="100px">
+    <mat-grid-tile
+      *ngFor="let tile of tiles"
+      [colspan]="tile.cols"
+      [rowspan]="tile.rows"
+      [style.background]="tile.color">
+
+        <div >
+          <div *ngIf="tile.text=='Legal'">
+            <mat-nav-list class="titulo-footer">
+              <mat-list-item>
+                <p class="font-footer">{{tile.text}}</p>
+              </mat-list-item>
+              <mat-list-item>  
+                <mat-icon mat-list-icon class="font-footer">description</mat-icon>
+                <a mat-list-item href="../../../assets/docs/AVISO_DE_PRIVACIDAD.pdf">
+                  <p class="font-footer">Aviso De Privacidad</p></a>
+              </mat-list-item>
+              <mat-list-item>  
+                <mat-icon mat-list-icon class="font-footer">description</mat-icon>
+                <a mat-list-item href="../../../assets/docs/Carta_de_derechos.pdf">
+                  <p class="font-footer">Carta De Derechos Mínimos</p></a>
+              </mat-list-item>
+              <mat-list-item>  
+                <mat-icon mat-list-icon class="font-footer">description</mat-icon>
+                <a mat-list-item href="../../../assets/docs/COD_POL_ADMON_RED.pdf">
+                  <p class="font-footer">Código De Políticas De Gestión De Tráfico</p></a>
+              </mat-list-item>
+              <mat-list-item>  
+                <mat-icon mat-list-icon class="font-footer">description</mat-icon>
+                <a mat-list-item href="../../../assets/docs/CODIGO_PRACTICAS_COMERCIALES.pdf">
+                  <p class="font-footer">Código De Prácticas Comerciales</p></a>
+              </mat-list-item>
+              <mat-list-item>  
+                <mat-icon mat-list-icon class="font-footer">description</mat-icon>
+                <a mat-list-item href="../../../assets/docs/REGISTRO_DE_CONTRATO_ADHESION_PROFECO.pdf">
+                  <p class="font-footer">Registro De Contrato De Adhesión</p></a>
+              </mat-list-item>
+          </mat-nav-list>
+          </div>
+          
+          <div *ngIf="tile.img">
+            <img class="logo" src="../../../assets/imgs/Logo-contorno.png" alt="logo 2m">
+          </div>
+
+          <div class="redes" *ngIf="tile.logo">
+            <mat-nav-list>
+              <mat-list-item>
+                <p class="font-footer">{{tile.text}}</p>
+              </mat-list-item> 
+                  <a width="315px" href="https://www.facebook.com/2MInternet"><img class="redes-logos" src="../../../assets/imgs/facebook-logo.png"></a>        
+                  <a href="https://www.instagram.com/2m.soluciones/?hl=es-la"><img class="redes-logos" src="../../../assets/imgs/instagram-logo.png"></a>    
+            </mat-nav-list>
+          </div>
+        </div>
+
+        <div *ngIf="tile.text=='footer'">
+          <p class="font-footer">© Todos los derechos reservados. Diseñado y Desarrollado por</p>
+        </div>
+
+  </mat-grid-tile>
+  </mat-grid-list>
+</footer>
