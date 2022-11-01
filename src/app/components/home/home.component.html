@@ -1,15 +1,122 @@
-<header class="background-landing">
-  <h1>Siente la velocidad</h1>
-  <h2>El internet más rápido, punto.</h2>
-  <button mat-raised-button>Contrata ya</button>
-</header>
+<div>
+  <mat-toolbar class="navbar">
+    <img class="logo-top" src="../assets/imgs/Logo-contorno.png" alt="logo 2m">
+      <span class="example-spacer"></span>
+      <button mat-button>Paquetes</button>
+      <button mat-button>¿Quienes somos?</button>
+      <button mat-button>Cobertura</button>
+      <button mat-button>Contacto</button>
+  </mat-toolbar>
+</div>
+<div class="background-landing">
+  <div class="background-container">
+    <h1>SIENTE LA</h1>
+    <h3>VELOCIDAD</h3>
+    <h2>El internet más rápido, punto.</h2>
+  </div>
+  <button class="background-button" mat-raised-button>Contrata ya</button>
+</div>
 <div class="background-paquetes">
   <h1>Paquetes</h1>
-  <mat-card>Basico</mat-card>
-  <mat-card>Plus</mat-card>
-  <mat-card>Pro</mat-card>
-  <mat-card>Empresarial</mat-card>
-  <mat-card>Gamer</mat-card>
+  <mat-grid-list [cols]="breakpoint" (window:resize)="onResize($event)">
+    <mat-grid-tile>
+      <mat-card class="paquete">
+        <div class="cabecera-paquete">
+          <h2>Paquete Básico</h2>
+          <h1>30</h1>
+          <h3>MEGAS</h3>
+        </div> 
+        <div class="contenido-paquete">
+          <h4>A SOLO</h4>
+          <h5>$ 300</h5>
+          <h6>al mes</h6>
+        </div> 
+        <mat-divider></mat-divider>
+        <div class="div-button-contratar">
+          <button class="contratar-button" mat-raised-button>Contratar</button>
+          <h6>Contrato a 12 meses</h6>
+        </div>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card class="paquete">
+        <div class="cabecera-paquete">
+          <h2>Paquete Plus</h2>
+          <h1>50</h1>
+          <h3>MEGAS</h3>
+        </div> 
+        <div class="contenido-paquete">
+          <h4>A SOLO</h4>
+          <h5>$ 450</h5>
+          <h6>al mes</h6>
+        </div> 
+        <mat-divider></mat-divider>
+        <div class="div-button-contratar">
+          <button class="contratar-button" mat-raised-button>Contratar</button>
+          <h6>Contrato a 12 meses</h6>
+        </div>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card class="paquete">
+        <div class="cabecera-paquete">
+          <h2>Paquete Pro</h2>
+          <h1>70</h1>
+          <h3>MEGAS</h3>
+        </div> 
+        <div class="contenido-paquete">
+          <h4>A SOLO</h4>
+          <h5>$ 550</h5>
+          <h6>al mes</h6>
+        </div> 
+        <mat-divider></mat-divider>
+        <div class="div-button-contratar">
+          <button class="contratar-button" mat-raised-button>Contratar</button>
+          <h6>Contrato a 12 meses</h6>
+        </div>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <mat-grid-list [cols]="breakpoint2" (window:resize)="onResize($event)">
+    <mat-grid-tile>
+      <mat-card class="paquete2">
+        <div class="cabecera-paquete">
+          <h2>Paquete Empresarial</h2>
+          <h1>100</h1>
+          <h3>MEGAS</h3>
+        </div> 
+        <div class="contenido-paquete">
+          <h4>A SOLO</h4>
+          <h5>$ 950</h5>
+          <h6>al mes</h6>
+        </div> 
+        <mat-divider></mat-divider>
+        <div class="div-button-contratar">
+          <button class="contratar-button" mat-raised-button>Contratar</button>
+          <h6>Contrato a 12 meses</h6>
+        </div>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card class="paquete2">
+        <div class="cabecera-paquete">
+          <h2>Paquete Gamer</h2>
+          <h1>50</h1>
+          <h3>MEGAS</h3>
+        </div> 
+        <div class="contenido-paquete">
+          <h4>A SOLO</h4>
+          <h5>$ 750</h5>
+          <h6>al mes</h6>
+        </div> 
+        <mat-divider></mat-divider>
+        <div class="div-button-contratar">
+          <button class="contratar-button" mat-raised-button>Contratar</button>
+          <h6>Contrato a 12 meses</h6>
+        </div>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
 </div>
 <div>
   <div class="background-contratar">
