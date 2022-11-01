@@ -31,7 +31,7 @@
     width: 100%;
     height: 0;
     padding-top: 64.50%;
-    background-image: url("../../../assets/imgs/Background.png");
+    background-image: url("../../../assets/imgs/Background2.png");
     position: relative;
     text-align: center;
     color: white;
@@ -66,7 +66,9 @@
 }
 
 .background-paquetes{
-    background-color: #991D18;
+    background-size: contain;
+    width: 100%;
+    background-image: url("../../../assets/imgs/Background3.jpg");
 }
 
 .background-contratar{
