@@ -161,11 +161,11 @@
               </mat-list-item>
               <mat-list-item>  
                 <mat-icon mat-list-icon class="font-footer">description</mat-icon>
-                <a mat-list-item href="../../../assets/docs/AVISO_DE_PRIVACIDAD.pdf">
-                  <p class="font-footer">Aviso De Privacidad</p></a>
+                <button mat-button (click)="openDialog()" class="font-footer">Aviso De Privacidad</button>
               </mat-list-item>
               <mat-list-item>  
                 <mat-icon mat-list-icon class="font-footer">description</mat-icon>
+                <button mat-button (click)="openDialogPdf()" class="font-footer">Carta De Derechos Mínimos</button>
                 <a mat-list-item href="../../../assets/docs/Carta_de_derechos.pdf">
                   <p class="font-footer">Carta De Derechos Mínimos</p></a>
               </mat-list-item>

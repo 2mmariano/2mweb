@@ -9,6 +9,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatListModule } from '@angular/material/list';
 import { MatInputModule } from '@angular/material/input';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,14 +18,18 @@ import { ContratarComponent } from './components/contratar/contratar.component';
 import { ReporteComponent } from './components/reporte/reporte.component';
 
 import { APP_ROUTING } from './app.routes';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DialogContentComponent } from './dialog-content/dialog-content.component';
+import { DialogPdfComponent } from './dialog-pdf/dialog-pdf.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ContratarComponent,
-    ReporteComponent
+    ReporteComponent,
+    DialogContentComponent,
+    DialogPdfComponent
   ],
   imports: [
     APP_ROUTING,
@@ -38,7 +43,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
     MatGridListModule,
     MatListModule,
     MatInputModule,
-    MatDividerModule
+    MatDividerModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

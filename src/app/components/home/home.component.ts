@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Tile } from '../../common/data'
+import { Tile } from '../../common/data';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogContentComponent } from 'src/app/dialog-content/dialog-content.component';
+import { DialogPdfComponent } from 'src/app/dialog-pdf/dialog-pdf.component';
 
 @Component({
   selector: 'app-home',
@@ -18,7 +21,7 @@ export class HomeComponent implements OnInit {
     {text: 'footer', cols: 4, rows: 1, color: '#1B345C', img: false, logo: false},
   ];
 
-  constructor() { }
+  constructor(public dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.breakpoint = (window.innerWidth >= this.maxwidth) ? 3 : 1;
@@ -32,6 +35,22 @@ export class HomeComponent implements OnInit {
   
   this.breakpoint = (event.target.innerWidth >= this.maxwidth) ? 3 : 1;
   this.breakpoint2 = (event.target.innerWidth >= this.maxwidth) ? 2 : 1;
+  }
+
+  openDialog() {
+    const dialogRef = this.dialog.open(DialogContentComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+
+  openDialogPdf() {
+    const dialogRef = this.dialog.open(DialogPdfComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
 
 }
