@@ -1,8 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Tile } from '../../common/data';
 import { MatDialog } from '@angular/material/dialog';
-import { DialogContentComponent } from 'src/app/dialog-content/dialog-content.component';
-import { DialogPdfComponent } from 'src/app/dialog-pdf/dialog-pdf.component';
+import { DialogContentComponent } from 'src/app/components/dialog/dialog-content/dialog-content.component';
+import { DialogPdfComponent } from 'src/app/components/dialog/dialog-pdf/dialog-pdf.component';
+import { DialogContratoComponent } from 'src/app/components/dialog/dialog-contrato/dialog-contrato.component';
+import { DialogReporteComponent } from 'src/app/components/dialog/dialog-reporte/dialog-reporte.component';
+import { Router } from '@angular/router';
+import { ViewportScroller } from "@angular/common";
 
 @Component({
   selector: 'app-home',
@@ -21,7 +25,9 @@ export class HomeComponent implements OnInit {
     {text: 'footer', cols: 4, rows: 1, color: '#1B345C', img: false, logo: false},
   ];
 
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog,
+    private router: Router,
+    private scroller: ViewportScroller) {}
 
   ngOnInit(): void {
     this.breakpoint = (window.innerWidth >= this.maxwidth) ? 3 : 1;
@@ -51,6 +57,38 @@ export class HomeComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });
+  }
+
+  openDialogReporte() {
+    const dialogRef = this.dialog.open(DialogReporteComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+
+  openDialogContrato() {
+    const dialogRef = this.dialog.open(DialogContratoComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+
+  cobertura() {
+    this.scroller.scrollToAnchor("cobertura");
+  }
+
+  paquetes() {
+    this.scroller.scrollToAnchor("paquetes");
+  }
+
+  quienes() {
+    this.router.navigateByUrl("/quienes");
+  }
+
+  contacto() {
+    this.router.navigateByUrl("/contacto")
   }
 
 }

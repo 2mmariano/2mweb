@@ -5,4 +5,10 @@ export interface Tile {
     text: string;
     img: boolean;
     logo: boolean;
-  }
+}
+
+export interface DialogData {
+  nombre: string;
+  titulo: string;
+  url: string;
+}

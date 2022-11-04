@@ -1,16 +1,21 @@
-import { RouterModule, Routes } from "@angular/router";
+import { ExtraOptions, RouterModule, Routes } from "@angular/router";
 import { HomeComponent } from './components/home/home.component'
-import { ReporteComponent } from './components/reporte/reporte.component'
-import { ContratarComponent } from './components/contratar/contratar.component'
+import { QuienesSomosComponent } from './components/quienes-somos/quienes-somos.component'
+import { ContactoComponent } from './components/contacto/contacto.component'
 
 const APP_ROUTES:Routes=[
     { path: 'home', component: HomeComponent },
-    { path: 'reporte', component: ReporteComponent },
-    { path: 'contratar', component: ContratarComponent },
+    { path: 'quienes', component: QuienesSomosComponent },
+    { path: 'contacto', component: ContactoComponent },
 
 
     //Ruta por defecto
     { path: '**', pathMatch: 'full', redirectTo: 'home' }
 ];
 
-export const APP_ROUTING = RouterModule.forRoot(APP_ROUTES, {relativeLinkResolution: 'legacy'});
+const routerOptions: ExtraOptions = {
+    anchorScrolling: "enabled"
+    //scrollPositionRestoration: "enabled"
+};
+
+export const APP_ROUTING = RouterModule.forRoot(APP_ROUTES, routerOptions);

@@ -14,22 +14,28 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
-import { ContratarComponent } from './components/contratar/contratar.component';
 import { ReporteComponent } from './components/reporte/reporte.component';
 
 import { APP_ROUTING } from './app.routes';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { DialogContentComponent } from './dialog-content/dialog-content.component';
-import { DialogPdfComponent } from './dialog-pdf/dialog-pdf.component'
+import { DialogContentComponent } from './components/dialog/dialog-content/dialog-content.component';
+import { DialogPdfComponent } from './components/dialog/dialog-pdf/dialog-pdf.component';
+import { DialogReporteComponent } from './components/dialog/dialog-reporte/dialog-reporte.component';
+import { DialogContratoComponent } from './components/dialog/dialog-contrato/dialog-contrato.component';
+import { QuienesSomosComponent } from './components/quienes-somos/quienes-somos.component';
+import { ContactoComponent } from './components/contacto/contacto.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    ContratarComponent,
     ReporteComponent,
     DialogContentComponent,
-    DialogPdfComponent
+    DialogPdfComponent,
+    DialogReporteComponent,
+    DialogContratoComponent,
+    QuienesSomosComponent,
+    ContactoComponent
   ],
   imports: [
     APP_ROUTING,
@@ -44,7 +50,7 @@ import { DialogPdfComponent } from './dialog-pdf/dialog-pdf.component'
     MatListModule,
     MatInputModule,
     MatDividerModule,
-    MatDialogModule
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
