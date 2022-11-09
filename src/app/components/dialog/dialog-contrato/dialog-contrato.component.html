@@ -1,1 +1,47 @@
-<p>dialog-contrato works!</p>
+<mat-stepper [linear]="isLinear"
+    class="example-stepper"
+    [orientation]="(stepperOrientation | async)!">
+    <mat-step [stepControl]="firstFormGroup" label="Nombre del Cliente">
+      <form [formGroup]="firstFormGroup">
+        <mat-form-field appearance="fill">
+          <mat-label>Nombre</mat-label>
+          <input matInput placeholder="Nombre, Apellido" formControlName="firstCtrl" required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperNext>Siguiente</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup" label="Dirección del Servicio">
+      <form [formGroup]="secondFormGroup">
+        <mat-form-field appearance="fill">
+          <mat-label>Domicilio</mat-label>
+          <input matInput formControlName="secondCtrl" placeholder="Ex. Aldama #11, Degollado, Jal"
+                 required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperPrevious>Atrás</button>
+          <button mat-button matStepperNext>Siguiente</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="thirdFormGroup" label="Número de contacto">
+      <form [formGroup]="thirdFormGroup">
+        <mat-form-field appearance="fill">
+          <mat-label>Teléfono</mat-label>
+          <input matInput formControlName="thirdCtrl" placeholder="Ex. 3481234567" required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperPrevious>Atrás</button>
+          <button mat-button matStepperNext>Siguiente</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Listo</ng-template>
+      <p>Pronto nos pondremos en contacto contigo.</p>
+      <mat-dialog-actions align="end">
+        <button mat-button [mat-dialog-close]="true" (click)="terminar()">Terminar</button>
+    </mat-dialog-actions>
+    </mat-step>
+  </mat-stepper>
