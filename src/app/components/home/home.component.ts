@@ -1,0 +1,94 @@
+import { Component, OnInit } from '@angular/core';
+import { Tile } from '../../common/data';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogContentComponent } from 'src/app/components/dialog/dialog-content/dialog-content.component';
+import { DialogPdfComponent } from 'src/app/components/dialog/dialog-pdf/dialog-pdf.component';
+import { DialogContratoComponent } from 'src/app/components/dialog/dialog-contrato/dialog-contrato.component';
+import { DialogReporteComponent } from 'src/app/components/dialog/dialog-reporte/dialog-reporte.component';
+import { Router } from '@angular/router';
+import { ViewportScroller } from "@angular/common";
+
+@Component({
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
+})
+export class HomeComponent implements OnInit {
+  breakpoint: number | undefined;
+  breakpoint2: number | undefined;
+  maxwidth = 1055;
+  minwidth = 1054;
+  tiles: Tile[] = [
+    {text: 'logo', cols: 2, rows: 2, color: '', img: true, logo: false},
+    {text: 'Legal', cols: 2, rows: 4, color: '', img: false, logo: false},
+    {text: 'Redes Sociales', cols: 2, rows: 2, color: '', img: false, logo: true},
+    {text: 'footer', cols: 4, rows: 1, color: '#1B345C', img: false, logo: false},
+  ];
+
+  constructor(public dialog: MatDialog,
+    private router: Router,
+    private scroller: ViewportScroller) {}
+
+  ngOnInit(): void {
+    this.breakpoint = (window.innerWidth >= this.maxwidth) ? 3 : 1;
+    this.breakpoint2 = (window.innerWidth >= this.maxwidth) ? 2 : 1;
+  }
+
+  onResize(event: any) {
+    
+  this.breakpoint = (event.target.innerWidth <= this.minwidth) ? 1 : 1;
+  this.breakpoint = (event.target.innerWidth <= this.minwidth) ? 1 : 1;
+  
+  this.breakpoint = (event.target.innerWidth >= this.maxwidth) ? 3 : 1;
+  this.breakpoint2 = (event.target.innerWidth >= this.maxwidth) ? 2 : 1;
+  }
+
+  openDialog() {
+    const dialogRef = this.dialog.open(DialogContentComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+
+  openDialogPdf() {
+    const dialogRef = this.dialog.open(DialogPdfComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+
+  openDialogReporte() {
+    const dialogRef = this.dialog.open(DialogReporteComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+
+  openDialogContrato() {
+    const dialogRef = this.dialog.open(DialogContratoComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+
+  cobertura() {
+    this.scroller.scrollToAnchor("cobertura");
+  }
+
+  paquetes() {
+    this.scroller.scrollToAnchor("paquetes");
+  }
+
+  quienes() {
+    this.router.navigateByUrl("/quienes");
+  }
+
+  contacto() {
+    this.router.navigateByUrl("/contacto")
+  }
+
+}

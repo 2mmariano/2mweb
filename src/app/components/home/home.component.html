@@ -1,0 +1,206 @@
+<div>
+  <mat-toolbar class="navbar">
+    <img class="logo-top" src="../assets/imgs/Logo-contorno.png" alt="logo 2m">
+      <span class="example-spacer"></span>
+      <button (click)="paquetes()" mat-button>Paquetes</button>
+      <button (click)="quienes()" mat-button>¿Quienes somos?</button>
+      <button (click)="cobertura()" mat-button>Cobertura</button>
+      <button (click)="contacto()" mat-button>Contacto</button>
+  </mat-toolbar>
+</div>
+<div class="background-landing">
+  <div class="background-container">
+    <h1>SIENTE LA</h1>
+    <h3>VELOCIDAD</h3>
+    <h2>El internet más rápido, punto.</h2>
+  </div>
+  <button (click)="openDialogContrato()" class="background-button" mat-raised-button>Contrata ya</button>
+</div>
+<div id="paquetes" class="background-paquetes">
+  <h1>Paquetes</h1>
+  <mat-grid-list [cols]="breakpoint" (window:resize)="onResize($event)">
+    <mat-grid-tile>
+      <mat-card class="paquete">
+        <div class="cabecera-paquete">
+          <h2>Paquete Básico</h2>
+          <h1>30</h1>
+          <h3>MEGAS</h3>
+        </div> 
+        <div class="contenido-paquete">
+          <h4>A SOLO</h4>
+          <h5>$ 300</h5>
+          <h6>al mes</h6>
+        </div> 
+        <mat-divider></mat-divider>
+        <div class="div-button-contratar">
+          <button (click)="openDialogContrato()" class="contratar-button" mat-raised-button>Contratar</button>
+          <h6>Contrato a 12 meses</h6>
+        </div>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card class="paquete">
+        <div class="cabecera-paquete">
+          <h2>Paquete Plus</h2>
+          <h1>50</h1>
+          <h3>MEGAS</h3>
+        </div> 
+        <div class="contenido-paquete">
+          <h4>A SOLO</h4>
+          <h5>$ 450</h5>
+          <h6>al mes</h6>
+        </div> 
+        <mat-divider></mat-divider>
+        <div class="div-button-contratar">
+          <button (click)="openDialogContrato()" class="contratar-button" mat-raised-button>Contratar</button>
+          <h6>Contrato a 12 meses</h6>
+        </div>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card class="paquete">
+        <div class="cabecera-paquete">
+          <h2>Paquete Pro</h2>
+          <h1>70</h1>
+          <h3>MEGAS</h3>
+        </div> 
+        <div class="contenido-paquete">
+          <h4>A SOLO</h4>
+          <h5>$ 550</h5>
+          <h6>al mes</h6>
+        </div> 
+        <mat-divider></mat-divider>
+        <div class="div-button-contratar">
+          <button (click)="openDialogContrato()" class="contratar-button" mat-raised-button>Contratar</button>
+          <h6>Contrato a 12 meses</h6>
+        </div>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <mat-grid-list [cols]="breakpoint2" (window:resize)="onResize($event)">
+    <mat-grid-tile>
+      <mat-card class="paquete2">
+        <div class="cabecera-paquete">
+          <h2>Paquete Empresarial</h2>
+          <h1>100</h1>
+          <h3>MEGAS</h3>
+        </div> 
+        <div class="contenido-paquete">
+          <h4>A SOLO</h4>
+          <h5>$ 950</h5>
+          <h6>al mes</h6>
+        </div> 
+        <mat-divider></mat-divider>
+        <div class="div-button-contratar">
+          <button (click)="openDialogContrato()" class="contratar-button" mat-raised-button>Contratar</button>
+          <h6>Contrato a 12 meses</h6>
+        </div>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card class="paquete2">
+        <div class="cabecera-paquete">
+          <h2>Paquete Gamer</h2>
+          <h1>50</h1>
+          <h3>MEGAS</h3>
+        </div> 
+        <div class="contenido-paquete">
+          <h4>A SOLO</h4>
+          <h5>$ 750</h5>
+          <h6>al mes</h6>
+        </div> 
+        <mat-divider></mat-divider>
+        <div class="div-button-contratar">
+          <button (click)="openDialogContrato()" class="contratar-button" mat-raised-button>Contratar</button>
+          <h6>Contrato a 12 meses</h6>
+        </div>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+<div>
+  <div id="cobertura" class="background-contratar">
+    <div class="contratar-elements">
+      <mat-icon mat-list-icon>location_on</mat-icon>
+      <h1>Contratar</h1>
+      <h2>¿Donde quieres que instalemos tu internet?</h2>
+      <h3>Ingresa los datos para validar cobertura.</h3>
+      <mat-form-field class="input" appearance="outline">
+        <mat-label>Código Postal</mat-label>
+        <input matInput placeholder="Ej. 47980" >
+      </mat-form-field>
+      <div class="div-button">
+        <button (click)="openDialogContrato()" class="contratar-button" mat-raised-button>Contrata ya</button>
+      </div>
+    </div>
+  </div>
+  <div class="background-reportar">
+    <div class="reportar-elements">
+      <h2 class="title">¿Tienes problemas con el servicio?</h2>
+      <div class="reportar-button">
+        <button (click)="openDialogReporte()"mat-raised-button>Reportar servicio</button>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<footer class="background-footer">
+  <mat-grid-list cols="4" rowHeight="100px">
+    <mat-grid-tile
+      *ngFor="let tile of tiles"
+      [colspan]="tile.cols"
+      [rowspan]="tile.rows"
+      [style.background]="tile.color">
+
+        <div >
+          <div *ngIf="tile.text=='Legal'">
+            <mat-nav-list class="titulo-footer">
+              <mat-list-item>
+                <p class="font-footer">{{tile.text}}</p>
+              </mat-list-item>
+              <mat-list-item>  
+                <mat-icon mat-list-icon class="font-footer">description</mat-icon>
+                <button mat-button (click)="openDialog()" class="font-footer">Aviso De Privacidad</button>
+              </mat-list-item>
+              <mat-list-item>  
+                <mat-icon mat-list-icon class="font-footer">description</mat-icon>
+                <button mat-button (click)="openDialogPdf()" class="font-footer">Carta De Derechos Mínimos</button>
+              </mat-list-item>
+              <mat-list-item>  
+                <mat-icon mat-list-icon class="font-footer">description</mat-icon>
+                <button mat-button (click)="openDialogPdf()" class="font-footer">Código De Políticas De Gestión De Tráfico</button>
+              </mat-list-item>
+              <mat-list-item>  
+                <mat-icon mat-list-icon class="font-footer">description</mat-icon>
+                <button mat-button (click)="openDialogPdf()" class="font-footer">Código De Prácticas Comerciales</button>
+              </mat-list-item>
+              <mat-list-item>  
+                <mat-icon mat-list-icon class="font-footer">description</mat-icon>
+                <button mat-button (click)="openDialogPdf()" class="font-footer">Registro De Contrato De Adhesión</button>
+              </mat-list-item>
+          </mat-nav-list>
+          </div>
+          
+          <div *ngIf="tile.img">
+            <img class="logo" src="../../../assets/imgs/Logo-contorno.png" alt="logo 2m">
+          </div>
+
+          <div class="redes" *ngIf="tile.logo">
+            <mat-nav-list>
+              <mat-list-item>
+                <p class="font-footer">{{tile.text}}</p>
+              </mat-list-item> 
+                  <a width="315px" href="https://www.facebook.com/2MInternet"><img class="redes-logos" src="../../../assets/imgs/facebook-logo.png"></a>        
+                  <a href="https://www.instagram.com/2m.soluciones/?hl=es-la"><img class="redes-logos" src="../../../assets/imgs/instagram-logo.png"></a>    
+            </mat-nav-list>
+          </div>
+        </div>
+
+        <div *ngIf="tile.text=='footer'">
+          <p class="font-footer">© Todos los derechos reservados. Diseñado y Desarrollado por</p>
+        </div>
+
+  </mat-grid-tile>
+  </mat-grid-list>
+</footer>
